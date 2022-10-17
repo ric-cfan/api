@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=2
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=DBCliente
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.7.4
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Teste veivulo
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=org.serratec
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=11
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=DBCliente
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=org.serratec.dbcliente
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

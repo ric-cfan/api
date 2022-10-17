@@ -1,0 +1,56 @@
+package org.serratec.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.serratec.domain.Livro;
+import org.serratec.dto.LivroCategoriaDTO;
+import org.serratec.dto.LivroDTO;
+import org.serratec.dto.LivroQntPorAutorDTO;
+import org.serratec.repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LivroService {
+	@Autowired
+	private LivroRepository livroRepository;
+	
+	public List<LivroDTO> buscaTodos() {
+		List<Livro> livros = livroRepository.findAll();
+		List<LivroDTO> livrosDTO = new ArrayList<>();
+		 for (Livro livro : livros) {
+			livrosDTO.add(new LivroDTO(livro));
+		}
+		 return livrosDTO;
+	}
+	
+	public LivroDTO buscaIsbn(String isbn) {
+		Optional<LivroDTO> livroDTO = Optional.ofNullable(new LivroDTO(livroRepository.findByIsbn(isbn)));
+		if(livroDTO.isEmpty()) {
+			return null;
+		}
+		return livroDTO.get();
+	}
+	
+	public List<LivroCategoriaDTO> buscaTituloOrdCategoria(String titulo) {
+		 List<Livro> livros = livroRepository.findByTituloContainingOrderByCategoriaDesc(titulo);
+		 List<LivroCategoriaDTO> livrosDTO = new ArrayList<>();
+		 for (Livro livro : livros) {
+			livrosDTO.add(new LivroCategoriaDTO(livro));
+		}
+		 return livrosDTO;
+	}
+	
+	public LivroQntPorAutorDTO qntLivroPorAutor(Long id_autor) {
+		Integer qntLivros = livroRepository.qntLivroPorAutor(id_autor);
+		String nomeAutor = livroRepository.nomeAutor(id_autor);
+		if(nomeAutor.equals(null) && qntLivros == null) {
+			return null;
+		}
+		LivroQntPorAutorDTO livroDTO = new LivroQntPorAutorDTO(id_autor, nomeAutor, qntLivros);
+		return  livroDTO;
+	}
+	
+}

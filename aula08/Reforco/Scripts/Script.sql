@@ -1,0 +1,1 @@
+select count(*) from livro l join livro_autor la on l.id_livro = la.id_livro where la.id_autor = 5 group BY la.id_autor; 

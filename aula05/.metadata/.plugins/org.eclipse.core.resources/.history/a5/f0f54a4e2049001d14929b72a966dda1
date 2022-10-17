@@ -1,0 +1,33 @@
+package org.serratec.heranca.domain;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+@Entity
+@DiscriminatorValue("gerente")
+public class Gerente extends Funcionario {
+	@Column(length = 10)
+	private String setor;
+
+	public Gerente(@NotBlank String nome, @CPF String cpf, Double salario, String turno, String setor) {
+		super(nome, cpf, salario, turno);
+		this.setor = setor;
+	}
+
+	public Gerente(@NotBlank String nome, @CPF String cpf, Double salario, String turno) {
+		super(nome, cpf, salario, turno);
+	}
+
+	public String getSetor() {
+		return setor;
+	}
+
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
+
+}

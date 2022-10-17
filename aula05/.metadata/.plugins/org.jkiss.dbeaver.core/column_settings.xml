@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="DatabaseInstanceSelector">
+		<column name="Nome" visible="true" order="0" width="135"/>
+		<column name="Descrição" visible="true" order="1" width="100"/>
+	</item>
+	<item id="SchemaSelector">
+		<column name="Nome" visible="true" order="0" width="100"/>
+		<column name="Comentario" visible="true" order="1" width="140"/>
+	</item>
+	<item id="scriptSelectorViewer">
+		<column name="Script" visible="true" order="0" width="583"/>
+		<column name="Time" visible="true" order="1" width="626"/>
+		<column name="Info" visible="true" order="2" width="529"/>
+		<column name="Folder" visible="true" order="3" width="541"/>
+	</item>
+</items>

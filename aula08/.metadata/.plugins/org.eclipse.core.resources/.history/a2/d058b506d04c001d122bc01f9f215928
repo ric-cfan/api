@@ -1,0 +1,30 @@
+package org.serratec.dto;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.serratec.domain.Autor;
+import org.serratec.domain.Categoria;
+
+public class LivroCategoriaDTO {
+	private Long id;
+
+	private String titulo;
+
+	private String isbn;
+
+	private Date dataPublicacao;
+
+	@ManyToOne
+	@JoinColumn(name = "categoria")
+	private Categoria categoria;
+
+	@ManyToMany
+	@JoinTable(name = "livro_autor", joinColumns = @JoinColumn(name = "id_livro"), inverseJoinColumns = @JoinColumn(name = "id_autor"))
+	private List<Autor> autores;
+}

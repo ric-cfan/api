@@ -1,0 +1,5 @@
+package org.serratec.domain;
+
+public class Autor {
+
+}

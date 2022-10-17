@@ -1,0 +1,68 @@
+package org.serratec.heranca.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+@MappedSuperclass
+public class Funcionario {
+
+	@NotBlank
+	@Column(nullable = true, length = 50)
+	protected String nome;
+
+	@Id
+	@CPF
+	@Column(nullable = false, length = 11)
+	private String cpf;
+
+	@Column(nullable = true)
+	private Double salario;
+
+	@Column(nullable = true)
+	private String turno;
+
+	public Funcionario(@NotBlank String nome, @CPF String cpf, Double salario, String turno) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.salario = salario;
+		this.turno = turno;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public Double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(Double salario) {
+		this.salario = salario;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
+
+}

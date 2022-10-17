@@ -1,0 +1,5 @@
+package com.example.clientes.exception;
+
+public class ControllerExceptionHandler {
+
+}

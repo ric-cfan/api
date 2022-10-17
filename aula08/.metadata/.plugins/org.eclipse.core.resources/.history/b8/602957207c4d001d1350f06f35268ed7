@@ -1,0 +1,5 @@
+package org.serratec.config;
+
+public class SwaggerConfig {
+
+}

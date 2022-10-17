@@ -1,0 +1,27 @@
+package org.serratec.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.domain.Autor;
+import org.serratec.dto.AutorCategoriaDTO;
+import org.serratec.dto.AutorDTO;
+import org.serratec.repository.AutorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AutorService {
+	@Autowired
+	private AutorRepository AutorRepository;
+	
+	public List<AutorDTO> buscaTodos() {
+		List<Autor> autors = autorRepository.findAll();
+		List<AutorDTO> autorsDTO = new ArrayList<>();
+		 for (Autor autor : autors) {
+			autorsDTO.add(new AutorDTO(autor));
+		}
+		 return autorsDTO;
+	}
+	
+}

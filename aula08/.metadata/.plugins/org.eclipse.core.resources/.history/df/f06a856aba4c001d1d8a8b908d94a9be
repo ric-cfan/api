@@ -1,0 +1,23 @@
+package org.serratec.service;
+
+import java.util.List;
+
+import org.serratec.domain.Livro;
+import org.serratec.repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LivroService {
+	@Autowired
+	private LivroRepository livroRepository;
+	
+	public List<Livro> buscaIsbn(String isbn) {
+		return livroRepository.findByIsbn(isbn);
+	}
+	
+	public List<Livro> buscaNomeOrdCategoria(String nome) {
+		return livroRepository.findByNomeContainingOrderByCategoriaDesc(nome);
+	}
+	
+}

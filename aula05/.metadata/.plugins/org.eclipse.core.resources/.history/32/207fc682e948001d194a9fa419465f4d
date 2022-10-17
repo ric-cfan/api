@@ -1,0 +1,5 @@
+package org.serratec.exercicio02.enums;
+
+public enum Combustivel {
+
+}

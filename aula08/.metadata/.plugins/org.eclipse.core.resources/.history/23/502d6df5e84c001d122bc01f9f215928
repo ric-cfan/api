@@ -1,0 +1,61 @@
+package org.serratec.dto;
+
+import java.util.List;
+
+import org.serratec.domain.Autor;
+import org.serratec.domain.Livro;
+
+public class AutorDTOs {
+	private Long id;
+
+	private String nome;
+
+	private Integer quantLivros;
+
+	public AutorDTOs() {
+		super();
+	}
+
+	public AutorDTOs(Long id, String nome, Integer quantLivros) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.quantLivros = quantLivros;
+	}
+
+	public AutorDTOs(Autor autor) {
+		this.id = autor.getId();
+		this.nome = autor.getNome();
+		List<Livro> livros = autor.getLivros();
+		Integer count = 0;
+		for (Livro livro : livros) {
+			count++;
+		}
+		this.quantLivros = count;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Integer getQuantLivros() {
+		return quantLivros;
+	}
+
+	public void setQuantLivros(Integer quantLivros) {
+		this.quantLivros = quantLivros;
+	}
+
+}

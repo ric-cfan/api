@@ -1,0 +1,54 @@
+package org.serratec.dto;
+
+import org.serratec.domain.Livro;
+
+public class LivroCategoriaDTO {
+	private Long idLivro;
+
+	private String tituloLivro;
+
+	private String nomeCategoria;
+
+	public LivroCategoriaDTO() {
+		super();
+	}
+
+	public LivroCategoriaDTO(Long idLivro, String tituloLivro, String nomeCategoria) {
+		super();
+		this.idLivro = idLivro;
+		this.tituloLivro = tituloLivro;
+		this.nomeCategoria = nomeCategoria;
+	}
+
+	public LivroCategoriaDTO(Livro livro) {
+		this.idLivro = livro.getId();
+		this.tituloLivro = livro.getTitulo();
+		this.nomeCategoria = livro.getCategoria().getNome();
+
+	}
+
+	public Long getId() {
+		return idLivro;
+	}
+
+	public void setId(Long idLivro) {
+		this.idLivro = idLivro;
+	}
+
+	public String getTituloLivro() {
+		return tituloLivro;
+	}
+
+	public void setTituloLivro(String tituloLivro) {
+		this.tituloLivro = tituloLivro;
+	}
+
+	public String getNomeCategoria() {
+		return nomeCategoria;
+	}
+
+	public void setNomeCategoria(String nomeCategoria) {
+		this.nomeCategoria = nomeCategoria;
+	}
+
+}

@@ -1,0 +1,5 @@
+package org.serratec.heranca.controller;
+
+public class GerenteController {
+
+}

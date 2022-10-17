@@ -1,0 +1,37 @@
+package org.serratec.heranca.domain;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+
+@Entity
+@DiscriminatorValue("gerente")
+public class Gerente extends Funcionario{
+	@Column(length = 10)
+	private String setor;
+	
+	@MapsId("cpf")
+	@OneToOne Funcionario funcionario;
+	
+	
+
+	public Gerente(String setor, Funcionario funcionario) {
+		super();
+		this.setor = setor;
+		this.funcionario = funcionario;
+	}
+
+	public Gerente() {
+		
+	}
+
+	public String getSetor() {
+		return setor;
+	}
+
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
+}

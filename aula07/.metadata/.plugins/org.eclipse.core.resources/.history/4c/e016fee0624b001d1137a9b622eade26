@@ -1,0 +1,29 @@
+package br.org.serratec.projeto.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.org.serratec.projeto.domain.Usuario;
+import br.org.serratec.projeto.exception.EmailException;
+import br.org.serratec.projeto.repository.UsuarioRepository;
+
+@Service
+public class UsuarioService {
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	public List<Usuario> findAll() {
+		return usuarioRepository.findAll();
+	}
+
+	public Usuario inserir(Usuario usuario) throws EmailException {
+		Usuario usuarioBanco = usuarioRepository.findByEmail(usuario.getEmail());
+		if (usuarioBanco!= null) {
+			throw new EmailException("Esse  já é um email existente");
+		}
+		return usuarioRepository.save(usuarioBanco);
+	}
+}

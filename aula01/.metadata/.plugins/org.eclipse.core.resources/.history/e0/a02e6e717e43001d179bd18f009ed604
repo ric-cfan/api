@@ -1,0 +1,5 @@
+package org.serratec.olamundo.controller;
+
+public class OlaMundo {
+
+}

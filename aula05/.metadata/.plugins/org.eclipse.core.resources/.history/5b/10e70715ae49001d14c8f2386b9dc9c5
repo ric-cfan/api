@@ -1,0 +1,85 @@
+package org.serratec.heranca.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
+
+import org.serratec.heranca.domain.Funcionario;
+import org.serratec.heranca.domain.Gerente;
+import org.serratec.heranca.repository.FuncionarioRepository;
+import org.serratec.heranca.repository.GerenteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/funcionarios")
+public class FuncionarioController {
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
+	private GerenteRepository gerenteRepository;
+
+	@GetMapping
+	public List<Gerente> listar() {
+		return gerenteRepository.findAll();
+	}
+
+	@GetMapping("/{cpf}")
+	public ResponseEntity<Gerente> buscar(@PathVariable String cpf) {
+		Optional<Gerente> funcionario = gerenteRepository.findById(cpf);
+		if (funcionario.isPresent()) {
+			return ResponseEntity.ok(funcionario.get());
+		}
+		return ResponseEntity.notFound().build();
+	}
+
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public Gerente inserir(@Valid @RequestBody Gerente gerente) {
+		return gerenteRepository.save(gerente);
+	}
+
+//	@PutMapping("/{cpf}")
+//	public ResponseEntity<Funcionario> atualizar(@PathVariable String cpf,
+//			@Valid @RequestBody Funcionario funcionario) {
+//		if (!funcionarioRepository.existsById(cpf)) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		funcionario.setCpf(cpf);
+//		funcionario = funcionarioRepository.save(funcionario);
+//		return ResponseEntity.ok(funcionario);
+//	}
+//
+//	@PutMapping("/{id}")
+//	public ResponseEntity<Cliente> updateCliente(@RequestBody Cliente cliente, @Valid @PathVariable Long id) {
+//		Optional<Cliente> clienteOptional = clienteRepository.findById(id);
+//		if (!clienteOptional.isPresent()) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		Cliente clienteNovo = clienteOptional.get();
+//		clienteNovo.setCpf(cliente.getCpf());
+//		clienteNovo.setEmail(cliente.getEmail());
+//		clienteNovo.setNome(cliente.getNome());
+//		clienteNovo = clienteRepository.save(clienteNovo);
+//		return ResponseEntity.ok(clienteNovo);
+//	}
+//
+//	@DeleteMapping("/{cpf}")
+//	public ResponseEntity<Void> remover(@PathVariable String cpf) {
+//		if (!funcionarioRepository.existsById(cpf)) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		funcionarioRepository.deleteById(cpf);
+//		return ResponseEntity.noContent().build();
+//	}
+}

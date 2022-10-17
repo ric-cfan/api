@@ -1,0 +1,5 @@
+package org.serratec.exercicio02.domain;
+
+public class Veiculo {
+
+}

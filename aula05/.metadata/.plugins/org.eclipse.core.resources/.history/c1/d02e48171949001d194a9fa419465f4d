@@ -1,0 +1,8 @@
+package org.serratec.heranca.repository;
+
+import org.serratec.heranca.domain.Funcionario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GerenteRepository extends JpaRepository<Funcionario,String>{
+
+}

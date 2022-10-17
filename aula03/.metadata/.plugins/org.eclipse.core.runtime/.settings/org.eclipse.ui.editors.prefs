@@ -1,0 +1,7 @@
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+SQLEditor.extraPanels.ratio=500-500
+SQLEditor.resultSet.ratio=412-568
+STS4BootMarkerIndicationColor=54,81,25
+eclipse.preferences.version=1

@@ -1,0 +1,26 @@
+package org.serratec.veiculo.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.veiculo.domain.Veiculo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/veiculos")
+public class VeiculoController {
+	private static List<Veiculo> lista = new ArrayList<>();
+	static {
+		lista.add(new Veiculo(1L, "Marca1", "Modelo1"));
+		lista.add(new Veiculo(2L, "Marca2", "Modelo2"));
+		lista.add(new Veiculo(3L, "Marca3", "Modelo3"));
+	}
+
+	@GetMapping
+	public List<Veiculo> listar() {
+		return lista;
+	}
+
+}

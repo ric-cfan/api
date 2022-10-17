@@ -1,0 +1,49 @@
+CREATE TABLE categoria (
+	id_categoria serial primary key,
+	nome varchar(30) NOT NULL,
+	descricao varchar(200)
+);
+
+CREATE TABLE livro (
+	id_livro serial primary key,
+	titulo varchar(40) NOT NULL,
+	isbn varchar(20) NOT NULL UNIQUE,
+	dataPublicacao date,
+	categoria int REFERENCES categoria(id_categoria)
+);
+
+CREATE TABLE associado (
+	id_associado serial primary key,
+	nome varchar(50) NOT NULL,
+	telefone varchar(15) NOT NULL,
+	cpf varchar(11) NOT null,
+	logradouro varchar(80) NOT null,
+	numero varchar(10) NOT null,
+	complemento varchar(30) NOT null,
+	bairro varchar(50) NOT null,
+	cidade varchar(50) NOT null,
+	estado varchar(2) NOT null
+);
+
+CREATE TABLE autor (
+	id_autor serial primary key,
+	nome varchar(50) NOT NULL
+);
+
+CREATE TABLE livro_autor (
+	id_livro int REFERENCES livro(id_livro),
+	id_autor int REFERENCES autor(id_autor)
+);
+
+CREATE TABLE emprestimo (
+	id_emprestimo serial primary key,
+	id_associado int REFERENCES associado(id_associado),
+	dataEmprestimo DATe NOT NULL
+);
+
+CREATE TABLE emprestimo_Livro (
+	id_emprestimo_livro serial primary key,
+	id_emprestimo int REFERENCES emprestimo(id_emprestimo),
+	id_livro int REFERENCES livro(id_livro),
+	observacoesAtoEmprestimo varchar(200)
+);

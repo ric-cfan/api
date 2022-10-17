@@ -1,0 +1,37 @@
+package org.serratec.controller;
+
+import java.util.List;
+
+import org.serratec.domain.Autor;
+import org.serratec.domain.Livro;
+import org.serratec.service.LivroService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/livros")
+public class LivroController {
+	@Autowired
+	LivroService livroService;
+	
+	@GetMapping
+	public ResponseEntity<List<Livro>> buscaTodos() {
+		return ResponseEntity.ok(livroService.buscaTodos());
+	}
+
+	@GetMapping("/isbn/{isbn}")
+	public ResponseEntity<List<Livro>> buscaIsbn(@PathVariable String isbn) {
+		return ResponseEntity.ok(livroService.buscaIsbn(isbn));
+	}
+	
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<LivroCategoriaDTO>> buscaOrdCategoria(@PathVariable String titulo) {
+		return ResponseEntity.ok(livroService.buscaTituloOrdCategoria(titulo));
+	}
+	
+
+}

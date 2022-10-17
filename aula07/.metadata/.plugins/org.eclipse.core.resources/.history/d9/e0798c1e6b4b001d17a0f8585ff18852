@@ -1,0 +1,5 @@
+package br.org.serratec.projeto.repository;
+
+public interface UsuarioPerfilRepository {
+
+}

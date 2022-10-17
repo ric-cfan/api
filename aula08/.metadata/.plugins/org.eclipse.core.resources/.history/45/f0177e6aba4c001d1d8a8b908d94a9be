@@ -1,0 +1,13 @@
+package org.serratec.repository;
+
+import java.util.List;
+
+import org.serratec.domain.Livro;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LivroRepository extends JpaRepository <Livro,Long> {
+	List<Livro> findByIsbn(String isbn);
+	List<Livro> findByNomeContainingOrderByCategoriaDesc(String nome);
+}

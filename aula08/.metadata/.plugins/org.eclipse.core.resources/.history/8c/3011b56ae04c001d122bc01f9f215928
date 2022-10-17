@@ -1,0 +1,45 @@
+package org.serratec.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.domain.Livro;
+import org.serratec.dto.LivroCategoriaDTO;
+import org.serratec.dto.LivroDTO;
+import org.serratec.repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LivroService {
+	@Autowired
+	private LivroRepository livroRepository;
+	
+	public List<LivroDTO> buscaTodos() {
+		List<Livro> livros = livroRepository.findAll();
+		List<LivroDTO> livrosDTO = new ArrayList<>();
+		 for (Livro livro : livros) {
+			livrosDTO.add(new LivroDTO(livro));
+		}
+		 return livrosDTO;
+	}
+	
+	public List<LivroDTO> buscaIsbn(String isbn) {
+		List<Livro> livros =  livroRepository.findByIsbn(isbn);
+		List<LivroDTO> livrosDTO = new ArrayList<>();
+		 for (Livro livro : livros) {
+			livrosDTO.add(new LivroDTO(livro));
+		}
+		 return livrosDTO;
+	}
+	
+	public List<LivroCategoriaDTO> buscaTituloOrdCategoria(String titulo) {
+		 List<Livro> livros = livroRepository.findByTituloContainingOrderByCategoriaDesc(titulo);
+		 List<LivroCategoriaDTO> livrosDTO = new ArrayList<>();
+		 for (Livro livro : livros) {
+			livrosDTO.add(new LivroCategoriaDTO(livro));
+		}
+		 return livrosDTO;
+	}
+	
+}

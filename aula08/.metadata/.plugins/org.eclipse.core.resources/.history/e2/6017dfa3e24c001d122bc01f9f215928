@@ -1,0 +1,16 @@
+package org.serratec.repository;
+
+import java.util.List;
+
+import org.serratec.domain.Livro;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LivroRepository extends JpaRepository <Livro,Long> {
+	List<Livro> findByIsbn(String isbn);
+	List<Livro> findByTituloContainingOrderByCategoriaDesc(String titulo);
+	@Query("select li from Livro li right join li.autores a group by a.id")
+    Livro findAllCount();
+}

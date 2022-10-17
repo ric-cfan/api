@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TesteDaAula/src/main/resources/db/migration/cria_tabela_usuario&apos; to &apos;V01__cria_tabela_usuario.sql&apos;" description="Rename resource &apos;cria_tabela_usuario&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/db/migration/cria_tabela_usuario" name="V01__cria_tabela_usuario.sql" stamp="1665700605578" updateReferences="true"/>
+</session>

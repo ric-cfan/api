@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\ASUS\serratec\api\aula01\.metadata\.plugins\org.eclipse.jdt.core
+950989839.index
+1866167541.index
+1865797976.index
+1650449417.index

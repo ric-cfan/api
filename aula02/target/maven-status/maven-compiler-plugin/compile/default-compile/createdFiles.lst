@@ -1,0 +1,3 @@
+org\serratec\backend\veiculos\domain\Veiculo.class
+org\serratec\backend\veiculos\VeiculosApplication.class
+org\serratec\backend\veiculos\controller\VeiculoController.class

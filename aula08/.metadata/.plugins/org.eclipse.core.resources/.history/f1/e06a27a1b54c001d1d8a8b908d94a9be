@@ -1,0 +1,5 @@
+package org.serratec.repository;
+
+public interface AutorRepository {
+
+}

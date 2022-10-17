@@ -1,0 +1,12 @@
+insert into livro_autor (id_livro, id_autor) values
+	(7, 5),
+	(8, 6),
+	(9, 5);
+
+insert into emprestimo (id_associado, dataEmprestimo) values
+	(3, '2020-01-01'),
+	(3, '2021-01-01');
+
+insert into emprestimo_livro (id_emprestimo, id_livro, observacoesAtoEmprestimo) values
+	(1, 7, '2000-01-01'),
+	(2, 9, '2002-01-01');
