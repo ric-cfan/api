@@ -1326,3 +1326,14 @@
 2022-10-16 17:12:08,926 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ASUS\serratec\api\aula08\Reforco\src\test\resources
 2022-10-16 21:46:47,360 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2022-10-16 21:55:10,371 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-17 12:43:36,784 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-17 13:06:58,815 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-17 13:06:58,826 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-17 13:06:58,833 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-17 13:06:58,869 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-17 13:06:59,070 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-17 13:06:59,071 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-17 13:06:59,071 [Worker-10: Launching Reforco - ReforcoApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ASUS\serratec\api\aula08\Reforco\src\test\resources
+2022-10-19 16:42:51,755 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-19 18:27:39,068 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-20 16:05:43,353 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
